@@ -201,7 +201,7 @@ export function PropertySearchHero() {
   };
 
   return (
-    <section className="min-h-screen  relative overflow-hidden">
+    <section className="relative overflow-hidden">
       <div className="bg-gradient-to-br from-[#5B9BD5] via-[#4A8BC2] to-[#3A7AB0]">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -left-20 top-0 w-96 h-96 bg-[#FFC466] rounded-full opacity-20 blur-3xl"></div>
@@ -219,9 +219,14 @@ export function PropertySearchHero() {
             <h2 className="text-xl md:text-3xl text-white font-normal mb-8">
               Student Accommodation Support in Melbourne
             </h2>
+                <p className="text-white mb-6 text-center text-md md:text-xl">
+              Supporting international students and families transitioning into
+              life in Melbourne and all across <br></br> Australia—with clarity, care, and
+              confidence.
+            </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+          {/* <div className="bg-white rounded-2xl shadow-2xl p-8 mb-8">
             <p className="text-gray-600 mb-6 text-center">
               Supporting international students and families transitioning into
               life in Melbourne and all across Australia—with clarity, care, and
@@ -267,9 +272,9 @@ export function PropertySearchHero() {
                 Search
               </button>
             </div>
-          </div>
+          </div> */}
 
-          <div className="bg-white rounded-2xl shadow-2xl p-6 mb-8">
+          {/* <div className="bg-white rounded-2xl shadow-2xl p-6 mb-8">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {propertyTypes.map((type, index) => {
                 const IconComponent = type.icon;
@@ -286,12 +291,12 @@ export function PropertySearchHero() {
                 );
               })}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
-      <div className="bg-[#faf7f2]">
+      {/* <div className="bg-[#faf7f2]">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 ">
-          {/* property */}
+        
           <div id="Accommodation" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {currentProperties.map((property, index) => (
               <div
@@ -377,8 +382,8 @@ export function PropertySearchHero() {
             </Button>
           </div>
         </div>
-      </div>
-     {isModalOpen && (
+      </div> */}
+     {/* {isModalOpen && (
         <div
           className="fixed inset-0 bg-black/70 bg-opacity-50 flex items-center justify-center z-50 p-4"
           onClick={closeModal}
@@ -404,7 +409,7 @@ export function PropertySearchHero() {
               </div>
 
               <div className="space-y-4">
-                {/* Full Name */}
+            
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Name<span className="text-red-500">*</span>
@@ -420,7 +425,7 @@ export function PropertySearchHero() {
                   />
                 </div>
 
-                {/* Email */}
+              
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Email<span className="text-red-500">*</span>
@@ -434,7 +439,7 @@ export function PropertySearchHero() {
                   />
                 </div>
 
-                {/* Phone Number */}
+           
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Phone Number<span className="text-red-500">*</span>
@@ -492,7 +497,7 @@ export function PropertySearchHero() {
             </div>
           </div>
         </div>
-      )}
+      )} */}
     </section>
   );
 }

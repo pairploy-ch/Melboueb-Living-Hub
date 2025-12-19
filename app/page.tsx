@@ -5,8 +5,10 @@ import { WhyLivingHub } from "@/components/why-living-hub"
 import { OurServices } from "@/components/our-services"
 import { StudentAccommodationJourney } from "@/components/student-accommodation-journey"
 import { SignatureSupportPackage } from "@/components/signature-support-package"
+import PrimeVisaVision  from "@/components/PrimeVisaVision"
 import { ReadyToFindCTA } from "@/components/ready-to-find-cta"
 import { Footer } from "@/components/footer"
+import  Blogs  from "@/components/blogs"
 
 export default function Home() {
   return (
@@ -18,8 +20,9 @@ export default function Home() {
       <OurServices />
       <StudentAccommodationJourney />
       <SignatureSupportPackage />
+      <PrimeVisaVision />
       <ReadyToFindCTA />
-   
+   <Blogs />
       <Footer />
     </div>
   )
