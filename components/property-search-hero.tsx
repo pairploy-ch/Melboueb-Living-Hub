@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const propertyTypes = [
   { icon: Home, label: "House" },
@@ -138,6 +139,7 @@ const allProperties = [
 ];
 
 export function PropertySearchHero() {
+    const {  t } = useLanguage()
  const [propertyType, setPropertyType] = useState("");
   const [priceRange, setPriceRange] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -217,12 +219,10 @@ export function PropertySearchHero() {
               />
             </div>
             <h2 className="text-xl md:text-3xl text-white font-normal mb-8">
-              Student Accommodation Support in Melbourne
+              {t.hero.headline}
             </h2>
                 <p className="text-white mb-6 text-center text-md md:text-xl">
-              Supporting international students and families transitioning into
-              life in Melbourne and all across <br></br> Australia—with clarity, care, and
-              confidence.
+              {t.hero.description}
             </p>
           </div>
 

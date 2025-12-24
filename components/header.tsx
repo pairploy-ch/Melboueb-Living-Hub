@@ -5,9 +5,20 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ContactModal } from "@/components/contact"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import { Globe } from "lucide-react"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 export function Header() {
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const { language, setLanguage, t } = useLanguage()
+
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -21,10 +32,10 @@ export function Header() {
 
   const handleSubmit = () => {
     console.log("Form submitted:", formData)
-    // TODO: ทำการส่งข้อมูลไปยัง API หรือ Database
-    alert("Thank you for contacting us! We will get back to you soon.")
+
+    alert(t.common.thankYou)
+
     setIsModalOpen(false)
-    // Reset form
     setFormData({
       fullName: "",
       email: "",
@@ -52,28 +63,48 @@ export function Header() {
 
             {/* Navigation */}
             <nav className="md:flex items-center gap-8">
-              <Link href="#Accommodation" className="text-[#2C2C2C] hover:text-[#D4A574] transition-colors font-medium">
-                Accommodation
+              <Link
+                href="#accommodation"
+                className="text-[#2C2C2C] hover:text-[#D4A574] transition-colors font-medium"
+              >
+                {t.header.accommodation}
               </Link>
-          
-              <Link href="#our-service" className="text-[#2C2C2C] hover:text-[#D4A574] transition-colors font-medium">
-                Our Service
+
+              <Link
+                href="#our-service"
+                className="text-[#2C2C2C] hover:text-[#D4A574] transition-colors font-medium"
+              >
+                {t.header.ourService}
               </Link>
+
               <Link
                 href="#signature-package"
                 className="text-[#2C2C2C] hover:text-[#D4A574] transition-colors font-medium"
               >
-                Signature Package
+                {t.header.signaturePackage}
               </Link>
             </nav>
 
-            {/* Contact Button */}
-            <Button
-              onClick={() => setIsModalOpen(true)}
-              className="hidden md:inline-flex bg-[#F8AA36] hover:bg-[#E09A26] text-white font-semibold px-8 rounded-lg"
-            >
-              Contact Us
-            </Button>
+            {/* Language Selector & Contact Button */}
+            <div className="hidden md:flex items-center gap-4">
+              <Select value={language} onValueChange={setLanguage}>
+                <SelectTrigger className="w-[100px] bg-white border-[#D4A574] focus:ring-[#D4A574]">
+                  <Globe className="w-4 h-4 mr-2" />
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="en">EN</SelectItem>
+                  <SelectItem value="th">TH</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <Button
+                onClick={() => setIsModalOpen(true)}
+                className="bg-[#F8AA36] hover:bg-[#E09A26] text-white font-semibold px-8 rounded-lg"
+              >
+                {t.common.contactUs}
+              </Button>
+            </div>
           </div>
         </div>
       </header>
