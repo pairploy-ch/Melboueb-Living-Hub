@@ -82,11 +82,11 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-2">
                 <Mail size={18} className="mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/80">info@livinghub.com.au</span>
+                <span className="text-primary-foreground/80">info@melbournelivinghubs.com</span>
               </li>
               <li className="flex items-start gap-2">
                 <Phone size={18} className="mt-0.5 flex-shrink-0" />
-                <span className="text-primary-foreground/80">+61 3 XXXX XXXX</span>
+                <span className="text-primary-foreground/80">WhatsApp 0466126095</span>
               </li>
               {/* <li className="flex items-start gap-2">
                 <MapPin size={18} className="mt-0.5 flex-shrink-0" />
